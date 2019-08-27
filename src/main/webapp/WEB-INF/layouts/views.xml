@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+	"-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	<definition extends="main" name="welcome">
+		<put-attribute name="title" value="Hubzone Job Site" />
+		<put-attribute name="body" value="/WEB-INF/views/welcome.jsp" />
+	</definition>
+	<definition extends="web-standard" name="jobList">
+		<put-attribute name="title" value="Hubzone Job Site" />
+		<put-attribute name="body" value="/WEB-INF/views/jobList.jsp" />
+	</definition>
+	<definition extends="web-standard" name="jobSearch">
+		<put-attribute name="title" value="Hubzone Job Site" />
+		<put-attribute name="body" value="/WEB-INF/views/jobSearch.jsp" />
+	</definition>
+	<definition extends="web-standard" name="advanceJobSearch">
+		<put-attribute name="title" value="Hubzone Job Site" />
+		<put-attribute name="body" value="/WEB-INF/views/advanceJobSearch.jsp" />
+	</definition>
+		<definition extends="web-standard" name="advanceJobSearchResult">
+		<put-attribute name="title" value="Hubzone Job Site" />
+		<put-attribute name="body" value="/WEB-INF/views/advanceJobSearchResult.jsp" />
+	</definition>
+	
+	<definition extends="main" name="searchJobPage">
+		<put-attribute name="title" value="Search Job" />
+		<put-attribute name="body" value="/WEB-INF/views/searchJobPage.jsp" />
+	</definition>
+	<definition extends="web-standard" name="jobCategories">
+		<put-attribute name="title" value="Hubzone Job Site" />
+		<put-attribute name="body" value="/WEB-INF/views/jobCategories.jsp" />
+	</definition>
+	<definition extends="web-standard" name="jobDetails">
+		<put-attribute name="title" value="Hubzone Job Site" />
+		<put-attribute name="body" value="/WEB-INF/views/jobDetails.jsp" />
+	</definition>
+
+	<definition extends="main" name="login">
+		<put-attribute name="title" value="Hubzone Job Site" />
+		<put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+	</definition>
+	
+	<definition extends="main" name="employerRegistrationPage">
+		<put-attribute name="title" value="Employer Registration" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/employerRegistrationPage.jsp" />
+	</definition>
+	<definition extends="main" name="candidateRegistrationPage">
+		<put-attribute name="title" value="Candidate Registration" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/candidateRegistrationPage.jsp" />
+	</definition>
+	
+	
+	<definition extends="main" name="aboutUsPage">
+		<put-attribute name="title" value="About Us" />
+		<put-attribute name="body" value="/WEB-INF/views/aboutUsPage.jsp" />
+	</definition>
+	<definition extends="main" name="frequentlyAskedQuestions">
+		<put-attribute name="title" value="Frequently Asked Questions" />
+		<put-attribute name="body" value="/WEB-INF/views/frequentlyAskedQuestions.jsp" />
+	</definition>
+	<definition extends="main" name="termsAndConditionPage">
+		<put-attribute name="title" value="Terms and Conditions" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/termsAndConditionPage.jsp" />
+	</definition>
+	<definition extends="main" name="contactUsPage">
+		<put-attribute name="title" value="Contact Us" />
+		<put-attribute name="body" value="/WEB-INF/views/contactUsPage.jsp" />
+	</definition>
+	<definition extends="main" name="privacyStatementPage">
+		<put-attribute name="title" value="Privacy Notice" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/privacyStatementPage.jsp" />
+	</definition>
+	<definition extends="main" name="forgotPasswordPage">
+		<put-attribute name="title" value="Forgot Password" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/forgotPasswordPage.jsp" />
+	</definition>
+
+	<definition extends="main" name="restorepassword">
+		<put-attribute name="title" value="Forgot Password" />
+		<put-attribute name="body" value="/WEB-INF/views/restorepassword.jsp" />
+	</definition>
+	
+	
+	
+	<!--    Employer -->
+	<definition extends="employer" name="employerDashBoard">
+		<put-attribute name="title" value="Hubzone Job Site" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/employerDashBoard.jsp" />
+	</definition>
+	<definition extends="employer" name="jobListByEmployer">
+		<put-attribute name="title" value="Hubzone Job Site" />
+		<put-attribute name="body" value="/WEB-INF/views/jobListByEmployer.jsp" />
+	</definition>
+	
+	<definition extends="employer" name="postJobPage">
+		<put-attribute name="title" value="Post Job" />
+		<put-attribute name="body" value="/WEB-INF/views/postJobPage.jsp" />
+	</definition>
+	<definition extends="employer" name="searchResumePage">
+		<put-attribute name="title" value="Search Resume" />
+		<put-attribute name="body" value="/WEB-INF/views/searchResumePage.jsp" />
+	</definition>
+	
+	<definition extends="employer" name="resultResumePage">
+		<put-attribute name="title" value="Resume Result" />
+		<put-attribute name="body" value="/WEB-INF/views/resultResumePage.jsp" />
+	</definition>
+	
+	<definition extends="employer" name="viewCompanyPage">
+		<put-attribute name="title" value="View Company Profile" />
+		<put-attribute name="body" value="/WEB-INF/views/viewCompanyPage.jsp" />
+	</definition>
+	<definition extends="employer" name="editCompanyProfilePage">
+		<put-attribute name="title" value="Edit Company Profile" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/editCompanyProfilePage.jsp" />
+	</definition>
+	
+	<definition extends="employer" name="employerRegisterConfirmation">
+		<put-attribute name="title" value="Register Confirmation" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/employerRegisterConfirmation.jsp" />
+	</definition>
+	
+	<definition extends="employer" name="employerTempPage">
+		<put-attribute name="title" value="Employer Temporary Page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/employerTempPage.jsp" />
+	</definition>
+	
+	
+	<!--    Candidate -->
+
+	<definition extends="candidate" name="candidateDashBoard">
+		<put-attribute name="title" value="Hubzone Job Site" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/candidateDashBoard.jsp" />
+	</definition>
+	
+	<definition extends="candidate" name="viewCandidateProfilePage">
+		<put-attribute name="title" value="View Profile" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/viewCandidateProfilePage.jsp" />
+	</definition> 
+	
+		<definition extends="candidate" name="viewCandidateProfileSearch">
+		<put-attribute name="title" value="View Profile" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/viewCandidateProfileSearch.jsp" />
+	</definition> 
+
+	<definition extends="candidate" name="editCandidateProfilePage">
+		<put-attribute name="title" value="Edit Profile" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/editCandidateProfilePage.jsp" />
+	</definition>         
+	
+	<definition extends="candidate" name="uploadCv">
+		<put-attribute name="title" value="Upload CV" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/uploadCv.jsp" />
+	</definition>    
+	
+	<definition extends="candidate" name="candidateRegisterConfirmation">
+		<put-attribute name="title" value="Register Confirmation" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/candidateRegisterConfirmation.jsp" />
+	</definition>
+	
+	<definition extends="candidate" name="viewJobTempPage">
+		<put-attribute name="title" value="View Job" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/viewJobTempPage.jsp" />
+	</definition>
+	
+	<!-- Admin --> 
+	
+	<definition extends="admin" name="editAdminProfile">
+		<put-attribute name="title" value="Edit Profile" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/editAdminProfile.jsp" />
+	</definition>  
+	
+	<definition extends="admin" name="viewAdminPage">
+		<put-attribute name="title" value="View Profile" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/viewAdminPage.jsp" />
+	</definition>  
+	
+	<definition extends="admin" name="userSearchPage">
+		<put-attribute name="title" value="Search Employer" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/userSearchPage.jsp" />
+	</definition>    
+	
+	<definition extends="admin" name="candidateSearchPage">
+		<put-attribute name="title" value="Search Job Seeker" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/candidateSearchPage.jsp" />
+	</definition>  
+	
+	<definition extends="admin" name="editJobCount">
+		<put-attribute name="title" value="Edit Job Limit" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/editJobCount.jsp" />
+	</definition>
+	
+	<definition extends="admin" name="editCandidateByAdmin">
+		<put-attribute name="title" value="Edit Candidate" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/editCandidateByAdmin.jsp" />
+	</definition>
+	<definition extends="admin" name="jobAppliedConfirmation">
+		<put-attribute name="title" value="Edit Candidate" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/jobAppliedConfirmation.jsp" />
+	</definition>
+	<definition extends="admin" name="adminEmail">
+		<put-attribute name="title" value="Admin Email" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/adminEmail.jsp" />
+	</definition>
+	
+	
+	
+
+
+</tiles-definitions>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:device="http://www.springframework.org/schema/mobile/device"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/mobile/device 
+		http://www.springframework.org/schema/mobile/device/spring-mobile-device-1.0.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing 
+		infrastructure -->
+
+	<!-- Enables the Spring MVC @Controller programming model -->
+
+
+
+
+
+	<!-- <annotation-driven> <argument-resolvers> <beans:bean class="org.springframework.mobile.device.site.SitePreferenceWebArgumentResolver" 
+		/> </argument-resolvers> </annotation-driven> -->
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
+		up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+	<!-- <resources location="/, classpath:/META-INF/web-resources/" mapping="/resources/**"/> -->
+
+	<!-- <default-servlet-handler/> -->
+
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
+		in the /WEB-INF/views directory -->
+	<!-- <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+		<beans:property name="prefix" value="/WEB-INF/views/" /> <beans:property 
+		name="suffix" value=".jsp" /> </beans:bean> -->
+	<!-- Interceptors that execute common control logic across multiple requests -->
+	<!-- <interceptors> -->
+	<!-- Configure the Theme Interceptor -->
+	<!-- <beans:bean class="org.springframework.web.servlet.theme.ThemeChangeInterceptor" 
+		/> -->
+
+
+	<!-- Detects the language to view the page -->
+	<!-- <beans:bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" 
+		p:paramName="lang" /> -->
+
+	<!-- Detects the client's Device -->
+	<!-- <beans:bean class="org.springframework.mobile.device.DeviceResolverHandlerInterceptor" 
+		/> -->
+	<!-- Redirects the client to their preferred site if necessary. This particular 
+		configuration redirects clients preferring the mobile site to 'm.testdomain'. 
+		NOTE: for this redirect to work testdomain.com and m.testdomain.com must 
+		be added to your hosts file when running the app -->
+	<!-- <beans:bean class="org.springframework.mobile.device.switcher.SiteSwitcherHandlerInterceptor" 
+		factory-method="mDot"> <beans:constructor-arg value="testdomain.com" /> </beans:bean> -->
+	<!-- </interceptors> -->
+
+
+
+	<!-- Resolves localized messages*.properties and application.properties 
+		files in the application to allow for internationalization. The messages*.properties 
+		files translate messages, the application.properties resource bundle localizes 
+		all application specific messages such as entity names and menu items. -->
+	<!-- <beans:bean class="org.springframework.context.support.ReloadableResourceBundleMessageSource" 
+		id="messageSource" p:basename="WEB-INF/i18n/messages,WEB-INF/i18n/application" 
+		p:fallbackToSystemLocale="false" /> -->
+	<!-- store preferred language configuration in a cookie -->
+	<!-- <beans:bean class="org.springframework.web.servlet.i18n.CookieLocaleResolver" 
+		id="localeResolver" p:cookieName="locale" /> -->
+	<!-- resolves localized <theme_name>.properties files in the classpath to 
+		allow for theme support -->
+	<!-- <beans:bean class="org.springframework.ui.context.support.ResourceBundleThemeSource" 
+		id="themeSource" /> -->
+	<!-- store preferred theme configuration in a cookie -->
+	<!-- <beans:bean class="org.springframework.web.servlet.theme.CookieThemeResolver" 
+		id="themeResolver" p:cookieName="theme" p:defaultThemeName="standard" /> -->
+	<!-- Tiles Configuration -->
+
+	<beans:bean class="org.springframework.web.servlet.view.UrlBasedViewResolver"
+		id="tilesViewResolver">
+		<beans:property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles2.TilesView" />
+	</beans:bean>
+
+	<beans:bean
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer"
+		id="tilesConfigurer">
+		<beans:property name="definitions">
+			<beans:list>
+				<beans:value>/WEB-INF/layouts/layouts.xml</beans:value>
+				<beans:value>/WEB-INF/views/**/views.xml</beans:value>
+				<beans:value>/WEB-INF/layouts/views.xml</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+	 <!-- Configure the multipart resolver -->
+    <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- one of the properties available; the maximum file size in bytes -->
+        <beans:property name="maxUploadSize" value="10000000000"/>
+    </beans:bean>
+
+
+
+	<!-- <beans:bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"> 
+		<beans:property name="validationMessageSource" ref="messageSource"/> </beans:bean> -->
+
+	<!-- Enable file upload functionality -->
+	<!-- <beans:bean class="org.springframework.web.multipart.support.StandardServletMultipartResolver" 
+		id="multipartResolver"/> -->
+
+	<!-- new block for REST Service -->
+	<!-- <beans:bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"> 
+		<beans:property name="order" value="1" /> <beans:property name="messageConverters"> 
+		<beans:list> <beans:bean class="org.springframework.http.converter.StringHttpMessageConverter" 
+		/> <beans:bean class="org.springframework.http.converter.FormHttpMessageConverter" 
+		/> <beans:bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter" 
+		/> <beans:bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter" 
+		/> <beans:bean class="org.springframework.http.converter.BufferedImageHttpMessageConverter" 
+		/> <beans:bean class="com.ride.ws.app.controller.MappingJackson2HttpMessageConverter"> 
+		<beans:property name="objectMapper"> <beans:bean class="com.ride.ws.app.controller.HibernateAwareObjectMapper" 
+		/> </beans:property> </beans:bean> </beans:list> </beans:property> </beans:bean> 
+		<annotation-driven /> -->
+
+	<annotation-driven>
+		<message-converters>
+			<beans:bean
+				class="org.springframework.http.converter.StringHttpMessageConverter" />
+			<beans:bean
+				class="org.springframework.http.converter.FormHttpMessageConverter" />
+			<beans:bean
+				class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+			<beans:bean
+				class="org.springframework.http.converter.xml.SourceHttpMessageConverter" />
+			<beans:bean
+				class="org.springframework.http.converter.BufferedImageHttpMessageConverter" />
+		 	<beans:bean
+				class="com.hubzone.controller.MappingJackson2HttpMessageConverter">
+				<beans:property name="objectMapper">
+					<beans:bean class="com.hubzone.controller.HibernateAwareObjectMapper" />
+				</beans:property>
+			</beans:bean> 
+		</message-converters>
+	</annotation-driven>
+	<!-- end REST service -->
+
+	<!-- <beans:import resource="db-config.xml"/> -->
+	<!-- <beans:import resource="security-context.xml"/> -->
+
+</beans:beans>
